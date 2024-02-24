@@ -1,6 +1,9 @@
 import React from "react";
 import { genres } from "../utils/constants";
 import { SongCart } from "../";
+
+
+
 const Discover = () => {
   return (
     <div className="flex flex-col">
