@@ -2,10 +2,11 @@ import React from "react";
 import { genres } from "../utils/constants";
 import { SongCart, Loader, Error } from "../";
 import { useGetTopChartsQuery } from "../services/shazamCore";
-
+import { useSelector, useDispatch } from "react-redux";
 const Discover = () => {
+  const dispatch = useDispatch()
   const { data, isFetching, error } = useGetTopChartsQuery();
-
+  const { activeSong, isPlaying } = useSelector((state) => state.player)
   isFetching? <Loader title = "Loading..." /> : null
   error? <Error /> : null
 
